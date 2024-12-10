@@ -91,6 +91,12 @@ void MainWindow::jsonReceived(const QJsonObject &docobj)
 
         userLeft(usernameVal.toString());
 
+    } else if (typeVal.toString().compare("userlist", Qt::CaseInsensitive) == 0) {
+        const QJsonValue userlistVal = docobj.value("userlist");
+        if (userlistVal.isNull() || !userlistVal.isArray())
+            return;
+
+        userListReceived(userlistVal.toVariant().toStringList());
     }
 }
 
@@ -105,5 +111,11 @@ void MainWindow::userLeft(const QString &user)
         ui->userListWidget->removeItemWidget(aItem);
         delete aItem;
     }
+}
+
+void MainWindow::userListReceived(const QStringList &list)
+{
+    ui->userListWidget->clear();
+    ui->userListWidget->addItems(list);
 }
 
