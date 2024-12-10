@@ -65,7 +65,7 @@ border-radius: 25px;
         <property name="frameShadow">
          <enum>QFrame::Shadow::Raised</enum>
         </property>
-        <widget class="QWidget" name="">
+        <widget class="QWidget" name="layoutWidget">
          <property name="geometry">
           <rect>
            <x>10</x>
@@ -85,7 +85,11 @@ border-radius: 25px;
              </widget>
             </item>
             <item row="0" column="1">
-             <widget class="QLineEdit" name="serverEdit"/>
+             <widget class="QLineEdit" name="serverEdit">
+              <property name="text">
+               <string>127.0.0.1</string>
+              </property>
+             </widget>
             </item>
             <item row="1" column="0">
              <widget class="QLabel" name="label_3">
@@ -95,7 +99,11 @@ border-radius: 25px;
              </widget>
             </item>
             <item row="1" column="1">
-             <widget class="QLineEdit" name="usernameEdit"/>
+             <widget class="QLineEdit" name="usernameEdit">
+              <property name="text">
+               <string>ciky</string>
+              </property>
+             </widget>
             </item>
            </layout>
           </item>
@@ -131,10 +139,10 @@ border-radius: 25px;
         <item>
          <layout class="QHBoxLayout" name="horizontalLayout">
           <item>
-           <widget class="QTextEdit" name="textEdit"/>
+           <widget class="QTextEdit" name="roomTextEdit"/>
           </item>
           <item>
-           <widget class="QListWidget" name="listWidget">
+           <widget class="QListWidget" name="userListWidget">
             <property name="maximumSize">
              <size>
               <width>125</width>
@@ -148,7 +156,7 @@ border-radius: 25px;
         <item>
          <layout class="QHBoxLayout" name="horizontalLayout_2">
           <item>
-           <widget class="QLineEdit" name="lineEdit"/>
+           <widget class="QLineEdit" name="sayLineEdit"/>
           </item>
           <item>
            <widget class="QPushButton" name="sayBtn">
